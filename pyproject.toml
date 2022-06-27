@@ -1,5 +1,5 @@
 [build-system]
-requires = ["setuptools>=61.0"]
+requires = ["setuptools>=59.6"]
 build-backend = "setuptools.build_meta"
 [project]
 name = "mysql_enc_ini"
@@ -11,9 +11,9 @@ description = "Encrypt MySQL connection information"
 readme = "README.md"
 requires-python = ">=3.6"
 classifiers = [
+    "License :: OSI Approved :: GNU General Public License v3 or later (GPLv3+)",
     "Programming Language :: Python :: 3",
-    "License :: OSI Approved ::  Lgplv3",
-    "Operating System :: Linux, MacOS",
+    "Operating System :: OS Independent",
 ]
 
 [project.urls]
