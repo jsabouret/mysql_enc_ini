@@ -12,9 +12,9 @@ import os
 class Mysql_enc_ini():
   def __init__(self,**kvargs):
     self.kvargs = kvargs
-    self.decrypted_file = 'decrypted.ini'
     self.home = os.environ['HOME']
     self.key_file = self.home + '/.mclef'
+    self.decrypted_file = self.home + '/decrypted_' + str(os.getpid()) + '.ini'
 
     if file_exists(self.key_file):
       with open(self.key_file, 'rb') as file:
@@ -66,7 +66,7 @@ class Mysql_enc_ini():
         encrypted_inifile = filepath[0] + "/." + filepath[1]
       else:
         encrypted_inifile = "." + filepath[1]
-    print("Checking MySQL connection informations and gathering them if not given")
+    print("Checking MySQL connection informations and gathering them if not given.")
     if self.kvargs:
       if self.kvargs["hostname"] == "localhost" or self.kvargs["hostname"] == "":
         self.kvargs["hostname"] = input("Give the Database server name: ")
@@ -76,7 +76,7 @@ class Mysql_enc_ini():
         self.kvargs["database"] = input("Give the Database Name: ")
       if self.kvargs["port"] == "":
         self.kvargs["port"] = input("Give the port number: ")
-      password = getpass.getpass("Give the password Username: " + self.kvargs["username"] + " on server: " + self.kvargs["hostname"] + ": ")
+      password = getpass.getpass("Give the password for username: " + self.kvargs["username"] + " on server: " + self.kvargs["hostname"] + ": ")
       parser = ConfigParser()
       parser.add_section('Connection')
       parser.set('Connection', 'host', self.kvargs["hostname"])
