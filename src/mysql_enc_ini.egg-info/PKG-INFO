@@ -1,6 +1,6 @@
 Metadata-Version: 2.1
 Name: mysql-enc-ini
-Version: 0.6.4
+Version: 0.6.5
 Summary: Encrypt MySQL connection information
 Author-email: Joel Sabouret <joel@netwitch.de>
 Project-URL: Homepage, https://github.com/jsabouret/mysql_enc_ini
